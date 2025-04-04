@@ -6,7 +6,7 @@ void main() {
     }
   }
 
-  /*
+  
   //Contador de 1 a 10.
   for (int i = 0; i <= 10; i++) {
     print(i);
@@ -20,5 +20,5 @@ void main() {
   //Contador de 0 a 10, pulando de 2 em 2.
   for (int i = 0; i >= 10; i += 2) {
     print(i);
-  } */
+  } 
 }
