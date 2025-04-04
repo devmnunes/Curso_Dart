@@ -1,57 +1,79 @@
 void main() {
-  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 2.735, true);
+  ContaBanco conta1 = ContaBanco('Matheus Nunes', 1234, 'CC', 2.735, true);
   conta1.statusConta();
 }
 
 class ContaBanco {
   // ATRIBUTOS
-  String _cliente = '';
-  int _conta = 0;
-  String _tipoConta = '';
-  double _saldo = 0;
-  bool _status = true;
+  String cliente;
+  int conta;
+  String tipoConta;
+  double saldo;
+  bool status;
 
   //CONSTRUTOR
-  ContaBanco(String this._cliente, int this._conta, String this._tipoConta,
-      double this._saldo, bool this._status);
+  ContaBanco(String this.cliente, int this.conta, String this.tipoConta,
+      double this.saldo, bool this.status);
 
   // MÉTODOS
 
-  String get cliente => _cliente;
-
-  set cliente(String cliente) {
-    _cliente = cliente;
+  void abrirConta(){
+    this.getTipoConta;
+    this.setStatus = true;
+      if (tipoConta == 'CC') {
+        this.setSaldo = 50;
+      }
+      else if (tipoConta == 'CP'){
+        this.setSaldo = 150;
+      }
   }
 
-  int get conta => _conta;
 
-  set conta(int conta) {
-    _conta = conta;
+  String get getCliente {
+    return cliente;
+  } 
+
+  set setCliente(String cliente) {
+    cliente = cliente;
   }
 
-  String get tipoConta => _tipoConta;
+  int get getConta{
+    return conta;
+   }
 
-  set tipoConta(String tipoConta) {
-    _tipoConta = tipoConta;
+  set setConta(int conta) {
+    conta = conta;
   }
 
-  double get saldo => _saldo;
-
-  set saldo(double saldo) {
-    _saldo = saldo;
+  String get getTipoConta{
+  return tipoConta;
   }
 
-  bool get status => _status;
+  set setTipoConta(String tipoConta) {
+    tipoConta = tipoConta;
+  }
 
-  set status(bool status) {
-    _status = status;
+  double get getSaldo{
+  return saldo;
+  }
+
+  set setSaldo(double saldo) {
+    saldo = saldo;
+  }
+
+  bool get getStatus{
+    return status;
+  } 
+
+  set setStatus(bool status) {
+    status = status;
   }
 
   statusConta() {
-    print('Cliente....: ${this._cliente}');
-    print('Conta....: ${this._conta}');
-    print('Tipo Conta....: ${this._tipoConta}');
-    print('Saldo....: ${this._saldo}');
-    print('Status da Conta....: ${this._status}');
+    print('Cliente....: ${this.getCliente}');
+    print('Conta....: ${this.getConta}');
+    print('Tipo Conta....: ${this.getTipoConta}');
+    print('Saldo....: ${this.getSaldo}');
+    print('Status da Conta....: ${this.getStatus}');
   }
 }
