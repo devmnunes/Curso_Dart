@@ -1,5 +1,5 @@
 void main() {
-  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 2.735, true);
+  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 10.000, true);
   conta1.statusConta();
 }
 
