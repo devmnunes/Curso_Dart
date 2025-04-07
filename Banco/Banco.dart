@@ -17,53 +17,51 @@ class ContaBanco {
 
   // MÉTODOS
 
-  void abrirConta(){
+  void abrirConta() {
     this.getTipoConta;
     this.setStatus = true;
-      if (tipoConta == 'CC') {
-        this.setSaldo = 50;
-      }
-      else if (tipoConta == 'CP'){
-        this.setSaldo = 150;
-      }
+    if (tipoConta == 'CC') {
+      this.setSaldo = 50;
+    } else if (tipoConta == 'CP') {
+      this.setSaldo = 150;
+    }
   }
-
 
   String get getCliente {
     return cliente;
-  } 
+  }
 
   set setCliente(String cliente) {
     cliente = cliente;
   }
 
-  int get getConta{
+  int get getConta {
     return conta;
-   }
+  }
 
   set setConta(int conta) {
     conta = conta;
   }
 
-  String get getTipoConta{
-  return tipoConta;
+  String get getTipoConta {
+    return tipoConta;
   }
 
   set setTipoConta(String tipoConta) {
     tipoConta = tipoConta;
   }
 
-  double get getSaldo{
-  return saldo;
+  double get getSaldo {
+    return saldo;
   }
 
   set setSaldo(double saldo) {
     saldo = saldo;
   }
 
-  bool get getStatus{
+  bool get getStatus {
     return status;
-  } 
+  }
 
   set setStatus(bool status) {
     status = status;
