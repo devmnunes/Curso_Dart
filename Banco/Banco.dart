@@ -1,5 +1,3 @@
-
-
 import 'Banco.dart';
 
 void main() {
@@ -16,14 +14,12 @@ class ContaBanco {
   bool status;
 
   //CONSTRUTOR
-  ContaBanco(String this.cliente, int this.conta, String this.tipoConta,
-      double this.saldo, bool this.status);
+  ContaBanco(String this.cliente, int this.conta, String this.tipoConta, double this.saldo, bool this.status,);
 
   // MÉTODOS
-
   void abrirConta() {
     this.getTipoConta;
-    this.setStatus = true;
+    this.getStatus == true;
     if (tipoConta == 'CC') {
       this.setSaldo = 50;
     } else if (tipoConta == 'CP') {
@@ -35,10 +31,12 @@ class ContaBanco {
     this.getStatus == true;
     if (getSaldo > 0) {
       print(
-          'Não foi possivel encerrar sua conta, saque o saldo restante da sua conta.');
+        'Não foi possivel encerrar sua conta, saque o saldo restante da sua conta.',
+      );
     } else if (getSaldo < 0) {
       print(
-          'Não foi possivel encerrar sua conta, veja se há debitos em sua conta.');
+        'Não foi possivel encerrar sua conta, veja se há debitos em sua conta.',
+      );
     } else {
       print('Conta encerrada com sucesso.');
       this.setStatus = false;
@@ -48,12 +46,8 @@ class ContaBanco {
   void sacar(double valor) {
     if (getStatus == true) {
       if (getSaldo > valor) {
-        setSaldo - valor;
-        
+        setSaldo = getSaldo - valor;
       }
-      
-    }
-      
     }
   }
 
@@ -61,40 +55,40 @@ class ContaBanco {
     return cliente;
   }
 
-  set setCliente(String cliente) {
-    cliente = cliente;
+  set setCliente(String c) {
+    cliente = c;
   }
 
   int get getConta {
     return conta;
   }
 
-  set setConta(int conta) {
-    conta = conta;
+  set setConta(int c) {
+    conta = c;
   }
 
   String get getTipoConta {
     return tipoConta;
   }
 
-  set setTipoConta(String tipoConta) {
-    tipoConta = tipoConta;
+  set setTipoConta(String t) {
+    tipoConta = t;
   }
 
   double get getSaldo {
     return saldo;
   }
 
-  set setSaldo(double saldo) {
-    saldo = saldo;
+  set setSaldo(double s) {
+    s = saldo;
   }
 
   bool get getStatus {
     return status;
   }
 
-  set setStatus(bool status) {
-    status = status;
+  set setStatus(bool s) {
+    status = s;
   }
 
   statusConta() {
