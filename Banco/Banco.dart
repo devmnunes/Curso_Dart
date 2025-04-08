@@ -1,7 +1,8 @@
 import 'Banco.dart';
 
 void main() {
-  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 10.000, true);
+  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 10, true);
+  conta1.abrirConta();
   conta1.statusConta();
 }
 
