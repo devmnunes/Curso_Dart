@@ -1,40 +1,30 @@
 void main() {
   Pessoa pessoa1 = Pessoa('Matheus', 27, '19 9 99839190');
-  pessoa1.apresenta();
+  print(pessoa1.idade);
 }
 
 class Pessoa {
   // Atributos da Classe - Variaveis
-  String _nome = '';
+  String nome = '';
   int _idade = 0;
-  String _telefone = '';
+  String telefone = '';
 
   // Construtor Classe
-  Pessoa(this._nome, this._idade, this._telefone);
+  Pessoa(this.nome, this._idade, this.telefone);
 
-  
-  // GET = PEGAR | SET =  MODIFICA SETTAR
-  String get nome => _nome;
-
-  set nome(String nome) {
-    this._nome;
-  }
-
-  int get idade => _idade;
-
-  set idade(int idade) {
+  // GET = PEGAR | SET =  DEFINE SETTAR
+ void set idade(int idade) {
     this._idade = idade;
   }
-
-  String get telefone => _telefone;
-
-  set telefone(String telefone) {
-    this._telefone = telefone;
-  }
+  
+int get idade {
+  return this._idade;
+}
 
   //Métodos da Classe - Funções
   void apresenta() {
     print(
-        'Olá eu me chamo ${this.nome}, tenho ${this.idade} anos, meu telefone é ${this.telefone}.');
+      'Olá eu me chamo ${this.nome}, tenho ${this._idade} anos, meu telefone é ${this.telefone}.',
+    );
   }
 }
