@@ -1,29 +1,32 @@
 import 'Banco.dart';
 
 void main() {
-  ContaBanco conta1 = ContaBanco('Matheus Nunes', 123, 'CC', 10.000, true);
+  ContaBanco conta1 = new ContaBanco();
+  conta1.cliente = 'Matheus';
+  conta1.setConta = 1234;
+  conta1.setTipoConta = 'CP';
+  conta1.abrirConta();
   conta1.statusConta();
 }
 
 class ContaBanco {
   // ATRIBUTOS
-  String cliente;
-  int conta;
-  String tipoConta;
-  double saldo;
-  bool status;
+  String cliente = '';
+  int conta = 0;
+  String tipoConta = '';
+  double saldo = 0;
+  bool status = false;
 
   //CONSTRUTOR
-  ContaBanco(String this.cliente, int this.conta, String this.tipoConta, double this.saldo, bool this.status,);
+   /* ContaBanco(String this.cliente, int this.conta, String this.tipoConta, double this.saldo, bool this.status,); */
 
   // MÉTODOS
   void abrirConta() {
     this.getTipoConta;
-    this.getStatus == true;
     if (tipoConta == 'CC') {
-      this.setSaldo = 50;
+      this.saldo = 50;
     } else if (tipoConta == 'CP') {
-      this.setSaldo = 150;
+      this.saldo = 150;
     }
   }
 
