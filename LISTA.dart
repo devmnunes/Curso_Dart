@@ -1,4 +1,6 @@
 void main() {
+  //LISTA É EM FORMATO DE KEY VALUE
+                       // 0  'MATHEUS'
   List<String> pessoas = ['Matheus', 'João', 'Maria'];
 
   print(pessoas);
@@ -23,8 +25,8 @@ void main() {
 
   //EXTRAI TODOS OS ITENS DA LISTA COMO UM CONTADOR
   int posicao = 1;
-  pessoas.forEach((String pessoa) {
-    print('$posicao- $pessoa');
+  pessoas.forEach((value) {
+    print(value);
     posicao++;
   });
 }

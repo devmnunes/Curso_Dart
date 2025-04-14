@@ -1,26 +1,32 @@
 import 'Construtor_Classe.dart';
 
-void main(){
+void main() {
+  List<Pessoa> pessoas = [
+    Pessoa('João', 20),
+    Pessoa('Pedro', 17),
+    Pessoa('Maria', 75),
+    Pessoa('Leticia', 22),
+  ];
 
-List<Pessoa> pessoas = [Pessoa('João', 20), Pessoa('Pedro', 17), Pessoa('Maria', 75), Pessoa('Leticia', 22)];
+  print(pessoas[1].nome);
+  print('${pessoas[1].idade} Anos');
 
-print(pessoas[1].nome);
-print('${pessoas[1].idade} Anos');
+  pessoas.add(Pessoa('Ana', 11));
+  pessoas.removeAt(1);
 
-/*
- Pessoa pessoa1 = Pessoa('João', 20);
- pessoa1.apresenta();
-*/
-
+  pessoas.forEach((Pessoa pessoa) {
+    print(pessoa.nome);
+    print(pessoa.idade);
+  });
 }
 
 class Pessoa {
- String nome;
+  String nome;
   int idade;
 
-  Pessoa( this.nome, this.idade);
+  Pessoa(this.nome, this.idade);
 
-  void apresenta(){
+  void apresenta() {
     print('Meu nome é $nome e tenho $idade anos.');
   }
 }
