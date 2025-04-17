@@ -4,20 +4,18 @@ void main() {
   runApp(const MyApp()); // <-runApp Roda o APP
 }
 
-class MyApp extends StatelessWidget { // <- StatelessWidget usado quando não tem mudança de estado na tela do app
+class MyApp extends StatelessWidget { // <- StatelessWidget usado quando não tem mudança de estado da inteface do usuario (A TELA NÃO MUDA) apena um objeto o Widget
+
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        // <- Estrutura do APP
-        appBar: AppBar(
-          // <- Barra superior
+      home: Scaffold( // <- Estrutura do APP
+        appBar: AppBar(  // <- Barra superior
           backgroundColor: Colors.purpleAccent,
           title: Center(
-            child: Text(
-              'Meu App',
+            child: Text('Meu App',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
@@ -35,3 +33,6 @@ class MyApp extends StatelessWidget { // <- StatelessWidget usado quando não te
     );
   }
 }
+
+
+
