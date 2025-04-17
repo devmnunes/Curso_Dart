@@ -10,18 +10,16 @@ Information displays
 Layout */
 
 void main() {
-  runApp(
-    // <- RODA O APP
-    MaterialApp(
-      // <- APP
+  runApp( // <- RODA O APP
+    MaterialApp( // <- APP
       home: Scaffold( // <- SCAFFOLD É A BASE DA TELA
         appBar: AppBar( // <- AppBar Barra superior do APP
           title: Center(
             child: Text('Meu APP')
             ),
             backgroundColor: const Color.fromARGB(255, 161, 55, 180),
-          ), 
-        body: Center(
+           ), 
+          body: Center(
           child: Text(
             'Olá Mundo',
             style: TextStyle(fontSize: 40, color: Colors.pink),
