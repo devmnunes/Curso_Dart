@@ -10,8 +10,7 @@
             "cwd": "flutter_application_",
             "request": "launch",
             "type": "dart",
-            "program": "main.dart"
-
+            "program": "lib/main.dart",
         },
         {
             "name": "flutter_application_ (profile mode)",
