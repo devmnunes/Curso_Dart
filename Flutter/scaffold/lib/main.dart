@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.blue,
         ),
         body: Row( // Coloca todos os Widgets filhos na mesma linha
-          mainAxisAlignment: MainAxisAlignment.spaceAround, //  mainAxisAlignment faz alinhamento na horizontal <--->
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, //  mainAxisAlignment faz alinhamento na horizontal <--->
           children: [
             Center(
               child: Text('Mesma linha 1', style: TextStyle(fontSize: 20)),
