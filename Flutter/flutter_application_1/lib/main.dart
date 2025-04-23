@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp()); // <-runApp Roda o APP
+  runApp(const MyApp(title: 'Meu Aplicativo',)); // <-runApp Roda o APP
 }
 
-class MyApp extends StatelessWidget { // <- StatelessWidget usado quando não tem mudança de estado da inteface do usuario (A TELA NÃO MUDA) apena um objeto o Widget
+class MyApp extends StatelessWidget {
+  // <- StatelessWidget usado quando não tem mudança de estado da inteface do usuario (A TELA NÃO MUDA) apena um objeto o Widget.
 
-  const MyApp({super.key});
+  final String title; // <- Colocando parametro no Stateless Widget
+
+  const MyApp({super.key, this.title = ''});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold( // <- Estrutura do APP
-        appBar: AppBar(  // <- Barra superior
+      home: Scaffold(
+        // <- Estrutura do APP
+        appBar: AppBar(
+          // <- Barra superior
           backgroundColor: Colors.purpleAccent,
           title: Center(
-            child: Text('Meu App',
+            child: Text(
+              this.title,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
@@ -33,6 +39,3 @@ class MyApp extends StatelessWidget { // <- StatelessWidget usado quando não te
     );
   }
 }
-
-
-
