@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
             ),
           backgroundColor: Colors.black,
           ),
-          body: Image.network('https://pt.pngtree.com/freepng/tiger-logo-icon_14529835.html')
+          body: Image.network('https://pt.wikipedia.org/wiki/S%C3%A3o_Paulo_Futebol_Clube#/media/Ficheiro:Brasao_do_Sao_Paulo_Futebol_Clube.svg'),
           //Image.asset('assets/tigre.png', width: 200,),
           
       ),
