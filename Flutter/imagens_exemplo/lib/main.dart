@@ -24,7 +24,9 @@ class _MyAppState extends State<MyApp> {
             ),
           backgroundColor: Colors.black,
           ),
-          body: Image.asset('assets/tigre.png', width: 200,),
+          body: Image.network('https://pt.pngtree.com/freepng/tiger-logo-icon_14529835.html')
+          //Image.asset('assets/tigre.png', width: 200,),
+          
       ),
     );
   }
