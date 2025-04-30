@@ -7,6 +7,7 @@ void main (){
   runApp(MyApp() );
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/Tela1' : (context) => Tela1(),
         '/Tela2' : (context) => Tela2(),
-        '/Tela3' : (context) => Tela3(),
+         '/Tela3' : (context) => Tela3(),
+        
       },
     );
   }

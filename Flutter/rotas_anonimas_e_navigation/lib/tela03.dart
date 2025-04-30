@@ -9,16 +9,14 @@ class Tela3 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.yellow,
-          title: Text('Tela 03'),
+          title: Center(child: Text('Tela 03')),
         ),
         body: Center(
           child: ElevatedButton(
-            child: Text('Voltar Tela 2'),
+            child: Text('Voltar Tela 2'), 
              onPressed: () { 
                Navigator.pop(context);
               },
-           
-              
              ),
         ),
       ),

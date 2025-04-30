@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Tela1 extends StatelessWidget {
   const Tela1({super.key});
 
@@ -18,7 +17,7 @@ class Tela1 extends StatelessWidget {
              onPressed: () { 
 
               Navigator.pushNamed(context, '/Tela2');
-
+          
               },
              child: Text('Ir para tela 02'),
                 ),
