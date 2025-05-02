@@ -7,6 +7,12 @@ void main (){
   runApp(MyApp() );
 }
 
+class Argumentos {
+  final int id;
+  final String nome;
+
+  Argumentos (this.id, this.nome);
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
