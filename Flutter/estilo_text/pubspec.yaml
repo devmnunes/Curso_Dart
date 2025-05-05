@@ -74,9 +74,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: FreckleFace
+   - family: Painterz
      fonts: 
-      - assets: assets/fonts/FreckleFace-Regular.ttf
+      - asset: assets/fonts/Painterz.ttf
        
   #   - family: Trajan Pro
   #     fonts:
