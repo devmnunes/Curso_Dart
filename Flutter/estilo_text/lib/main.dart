@@ -11,13 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData( //Padrões pré definidas no app
-        fontFamily: 'Painterz' ,
-        brightness: Brightness.dark,  //App modo escuro
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.red,
+        fontFamily: 'Painterz',
+        brightness: Brightness.dark,
+        appBarTheme: AppBarTheme(
+          color: Colors.purple.shade700),
+
           ),
-      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Meu App',
