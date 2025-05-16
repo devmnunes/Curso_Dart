@@ -13,9 +13,7 @@ Future getPosts() async {
   final client = http.Client(); //Cria uma instancia de client
 
   try {
-    final uri = Uri.parse(
-      'https://jsonplaceholder.typicode.com/posts',
-    ); //REQUISITA API
+    final uri = Uri.parse('https://jsonplaceholder.typicode.com/posts'); //REQUISITA API
 
     final response = await client.get(uri); //AGUARDA A RESPOSTA DA API
 
