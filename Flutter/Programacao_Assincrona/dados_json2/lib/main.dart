@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 void main () async {
-  final uri = Uri.https('jsonplaceholder.typicode.com', '/todos/'); //'todos' REQUISITA VARIOS DADOS DE UMA API
+  final uri = Uri.https('jsonplaceholder.typicode.com', '/todos/1'); //'todos' REQUISITA VARIOS DADOS DE UMA API
   final future = http.get(uri);
 
   future.then((response) {
@@ -15,7 +15,6 @@ void main () async {
         list.forEach((element){
           print(element);
         });
-
      }
      else {
       print('Erro!');
