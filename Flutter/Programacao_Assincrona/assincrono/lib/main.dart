@@ -18,6 +18,5 @@ void main() async {
 }
 //FUNÇÃO ASSINCRONA
 Future<void> quatro() async {
-
   return Future.delayed(Duration(seconds: 3), () => print(4));
 }
