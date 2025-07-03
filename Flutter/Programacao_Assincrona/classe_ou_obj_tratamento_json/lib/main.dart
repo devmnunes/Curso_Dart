@@ -12,31 +12,39 @@ void main() async {
 
       Map<String, dynamic> dados = json.decode(response.body);
 
-      /* Todo todo = Todo(
-        dados['userId'],
-        dados['id'], 
-        dados['title'],
-        dados['completed'],
-      ); */
+      DadosJson todos = DadosJson.fromJson(dados);
 
-      Todo todo = Todo.fromJson(dados);
-
-      print(dados);
+      print(todos.title);
+      print(todos.toJson());
     } else {
       print('Erro');
     }
   });
 }
 
-class Todo {
+class DadosJson {
   final int userId;
   final int id;
   final String title;
   final bool completed;
 
-  Todo(this.userId, this.id, this.title, this.completed);
+  DadosJson(this.userId, this.id, this.title, this.completed);
 
-  factory Todo.fromJson(Map json) {
-    return Todo(json['userId'], json['id'], json['title'], json['completed']);
+  //Recebe String JSON como entrada e retorta um objeto da lingagem.
+  factory DadosJson.fromJson(Map json) {
+    return DadosJson(
+      json['userId'],
+      json['id'],
+      json['title'],
+      json['completed'],
+    );
   }
+
+  //Recebe um objeto da linguagem e converte para JSON
+  Map<String, dynamic> toJson() => {
+    'userId': this.userId,
+    'id': this.id,
+    'title': this.title,
+    'completed': this.completed,
+  };
 }

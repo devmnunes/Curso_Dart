@@ -10,7 +10,9 @@ void main() async {
   future.then((response) {
     if (response.statusCode == 200) {
         print('Página carregada');
-        final result = jsonDecode(response.body); //DECODIFICA O RESULTADO DA PAGINA
+        
+        //DECODIFICA O RESULTADO DA PAGINA
+        final result = jsonDecode(response.body); 
         return result;
         
       } 
