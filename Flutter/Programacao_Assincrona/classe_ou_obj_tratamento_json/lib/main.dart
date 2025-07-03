@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 void main() async {
-  Uri uri = Uri.https('jsonplaceholder.typicode.com', '/todos/1');
+  final uri = Uri.https('jsonplaceholder.typicode.com', '/todos/1');
   final future = http.get(uri);
 
   future.then((response) {
