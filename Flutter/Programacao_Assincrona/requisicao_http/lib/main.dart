@@ -4,13 +4,13 @@ import 'package:http/http.dart' as http;
 
 
 void main() async {
-  final uri = Uri.https('jsonplaceholder.typicode.com', '/'); //REQUISITA PAGINA
+  //REQUISITA PAGINA
+  final uri = Uri.https('jsonplaceholder.typicode.com', '/'); 
   final future =  http.get(uri);
 
   future.then((response) {
     if (response.statusCode == 200) {
         print('Página carregada');
-        
         //DECODIFICA O RESULTADO DA PAGINA
         final result = jsonDecode(response.body); 
         return result;

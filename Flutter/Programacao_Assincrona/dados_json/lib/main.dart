@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 void main() async {
   //URL
-  Uri uri = Uri.https('jsonplaceholder.typicode.com', '/todos/1');
+  Uri uri = Uri.https('pokeapi.co', '/api/v2/pokemon/');
 
   //ATRIBUINDO A URL A UMA VARIAVEL
   final future = http.get(uri); //REQUISITANTO A URL
@@ -19,7 +19,7 @@ void main() async {
 
       //DECODIFICANDO OS DADOS DA API, PARA SER USADOS
       Map<String, dynamic> dados = json.decode(response.body);
-      print(dados['title']);
+      print(dados['results']);
 
     } else {
       print('Error!');
