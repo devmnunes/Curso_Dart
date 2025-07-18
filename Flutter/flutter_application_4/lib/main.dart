@@ -18,34 +18,31 @@ class MyApp extends StatefulWidget {
 class _MyApp extends State<MyApp> {
   //List<String> listaProdutos = [];
 
-  List<String> listaProdutos = List<String>.generate(20, (i) => 'Produto ${i + 1}');
+  List<String> listaProdutos = List<String>.generate(
+    20,
+    (i) => 'Produto ${i + 1}',
+  );
 
   Future<List<Produto>> getProdutos() async {
+    
+    Uri uri = Uri.parse(
+      'api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
+    );
 
-    Uri uri = Uri.parse('api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
+    var future = await http.get(uri);
 
-    var future = http.get(uri);
+    var dados = json.decode(future.body);
 
-    future.then( (response) {
-      if (response.statusCode == 200) {
-        print('Página carregada');
-
-        response = json.decode(response.body);
-        
-      } else {
-        print('Erro');
-      }
-    });
+    print(dados);
 
     return [];
   }
 
   @override
   Widget build(BuildContext context) {
-
     print(listaProdutos.length);
 
-  /*  for (var i = 0; i < 20; i++) {
+    /*  for (var i = 0; i < 20; i++) {
       listaProdutos.add('Produto ${i+1}');
     } */
 
@@ -53,9 +50,7 @@ class _MyApp extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('List View', style: TextStyle(
-            color: Colors.white,
-          ), ),
+          title: Text('List View', style: TextStyle(color: Colors.white)),
           backgroundColor: const Color.fromARGB(255, 14, 106, 182),
         ),
 
@@ -63,14 +58,14 @@ class _MyApp extends State<MyApp> {
           itemCount: listaProdutos.length,
           itemBuilder: (context, indice) {
             return ListTile(
-                  title: Text(listaProdutos[indice]),
+              title: Text(listaProdutos[indice]),
               onTap: () {
                 print(indice);
                 print('${listaProdutos[indice]} foi selecionado');
               },
             );
-          }),
-
+          },
+        ),
       ),
     );
   }
@@ -91,9 +86,17 @@ class Produto {
   final int quantidade;
   final double preco;
 
-  Produto(this.produtoId, this.produto, this.endereco, this.descricao, this.imagem, this.quantidade, this.preco);
- 
-  factory Produto.fromJson (Map json) {
+  Produto(
+    this.produtoId,
+    this.produto,
+    this.endereco,
+    this.descricao,
+    this.imagem,
+    this.quantidade,
+    this.preco,
+  );
+
+  factory Produto.fromJson(Map json) {
     return Produto(
       json['produtoId'],
       json['produto'],
@@ -106,13 +109,12 @@ class Produto {
   }
 
   Map<String, dynamic> toJson() => {
-      'produtoId': this.produtoId,
-      'produto': this.produto,
-      'endereco': this.endereco,
-      'descricao': this.descricao,
-      'imagem': this.imagem,
-      'quantidade': this.quantidade,
-      'preco': this.preco,
+    'produtoId': this.produtoId,
+    'produto': this.produto,
+    'endereco': this.endereco,
+    'descricao': this.descricao,
+    'imagem': this.imagem,
+    'quantidade': this.quantidade,
+    'preco': this.preco,
   };
-  
 }
