@@ -18,38 +18,61 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Página de login'),
-          backgroundColor: Colors.pinkAccent,
+          title: Text('Página de login', style: TextStyle(
+            color: Colors.white,
+          ), ),
+          backgroundColor: const Color.fromARGB(255, 14, 106, 182),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text('Insira seus dados',
-             style: TextStyle(fontSize: 20,
-              fontWeight: FontWeight.bold),
-             ),
-
-             Text('Email:',
-             style: TextStyle(fontSize: 15,
-              fontWeight: FontWeight.bold),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text('Insira seus dados',
+              textAlign: TextAlign.center,
+               style: TextStyle(fontSize: 17,
+                ),
+               ),
+          
+          
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'E-mail'
+                ),
               ),
-
-            TextField(),
-
-            Text('Senha:',
-            style: TextStyle(fontSize: 15,
-              fontWeight: FontWeight.bold),
+          
+              
+          
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Senha'
+                ),
+                obscureText: true,
               ),
-
-            TextField(),
-
-            ElevatedButton(onPressed: (){},
-             child: Text('Entrar'),
-             ),
-
-            Text('Esqueceu a senha?'),
-
-          ],
+          
+              Text('Esqueceu a senha?'),
+          
+              SizedBox(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.all(Radius.circular(2.5)),
+                    ),
+                    
+                    backgroundColor: const Color.fromARGB(255, 14, 106, 182),
+                  ),
+                  onPressed: (){},
+                 child: Text('Entrar', style: TextStyle(
+                  color: Colors.white,
+                 ),),
+                 ),
+              ),
+          
+              
+          
+            ],
+          ),
         ),
       ),
     );
