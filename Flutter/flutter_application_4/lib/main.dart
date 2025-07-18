@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(const MyApp() );
 }
 
 class MyApp extends StatefulWidget {
@@ -23,24 +23,27 @@ class _MyApp extends State<MyApp> {
     (i) => 'Produto ${i + 1}',
   );
 
-  Future<List<Produto>> getProdutos() async {
-    
-    Uri uri = Uri.parse(
-      'api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
+  Future<List<Produto>?> getProdutos() async {
+    Uri uri = Uri.http(
+      'https://pokeapi.co/api/v2/pokemon/',
     );
 
-    var future = await http.get(uri);
+    final response = await http.get(uri);
 
-    var dados = json.decode(future.body);
+    if (response.statusCode == 200) {
+      var dados = json.decode(response.body);
 
-    print(dados);
+      print(dados);
+    } else {
+      print('Erro');
+    }
 
     return [];
   }
 
   @override
   Widget build(BuildContext context) {
-    print(listaProdutos.length);
+    //print(listaProdutos.length);
 
     /*  for (var i = 0; i < 20; i++) {
       listaProdutos.add('Produto ${i+1}');
