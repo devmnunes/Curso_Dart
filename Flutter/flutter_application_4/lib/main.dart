@@ -24,32 +24,38 @@ class _MyApp extends State<MyApp> {
   );
 
   Future<List<Produto>?> getProdutos() async {
-    Uri uri = Uri.parse(
-      'https://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
+    Uri uri = Uri.https(
+      'api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
     );
-    print(uri);
 
     var response = await http.get(uri);
 
-    var dados = json.decode(response.body) as List;
+    var dados = json.decode(response.body);
 
     print(dados);
 
+    List<Produto> produtos = [];
+
     dados.forEach((elemento) {
-      print(elemento);
+      Produto produto = Produto(
+        elemento['produtoId'],
+        elemento['produto'],
+        elemento['endereco'],
+        elemento['descicao'],
+        elemento['imagem'],
+        int.parse(elemento['quantidade']),
+        double.parse(elemento['preco']),
+      );
+      produtos.add(produto);
     });
+
+    print(produtos);
   }
 
   @override
   Widget build(BuildContext context) {
-    //print(listaProdutos.length);
-
-    /*  for (var i = 0; i < 20; i++) {
-      listaProdutos.add('Produto ${i+1}');
-    } */
-
     return MaterialApp(
-     /* home: Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text('List View', style: TextStyle(color: Colors.white)),
@@ -68,7 +74,7 @@ class _MyApp extends State<MyApp> {
             );
           },
         ),
-      ), */
+      ),
     );
   }
 }
