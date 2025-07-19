@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 void main() async {
-  runApp(const MyApp() );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -24,21 +24,20 @@ class _MyApp extends State<MyApp> {
   );
 
   Future<List<Produto>?> getProdutos() async {
-    Uri uri = Uri.http(
-      'https://pokeapi.co/api/v2/pokemon/',
+    Uri uri = Uri.parse(
+      'https://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
     );
+    print(uri);
 
-    final response = await http.get(uri);
+    var response = await http.get(uri);
 
-    if (response.statusCode == 200) {
-      var dados = json.decode(response.body);
+    var dados = json.decode(response.body) as List;
 
-      print(dados);
-    } else {
-      print('Erro');
-    }
+    print(dados);
 
-    return [];
+    dados.forEach((elemento) {
+      print(elemento);
+    });
   }
 
   @override
@@ -50,7 +49,7 @@ class _MyApp extends State<MyApp> {
     } */
 
     return MaterialApp(
-      home: Scaffold(
+     /* home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text('List View', style: TextStyle(color: Colors.white)),
@@ -69,7 +68,7 @@ class _MyApp extends State<MyApp> {
             );
           },
         ),
-      ),
+      ), */
     );
   }
 }
@@ -99,7 +98,7 @@ class Produto {
     this.preco,
   );
 
-  factory Produto.fromJson(Map json) {
+  factory Produto.fromJson(Map<String, dynamic> json) {
     return Produto(
       json['produtoId'],
       json['produto'],
