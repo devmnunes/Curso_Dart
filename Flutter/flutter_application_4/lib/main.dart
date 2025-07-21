@@ -22,19 +22,21 @@ class _MyApp extends State<MyApp> {
 
   Future<List<Produto>> getProdutos() async {
 
-    Uri uri = Uri.parse('api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
+    Uri uri = Uri.parse('http://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
 
-    var future = http.get(uri);
+    final future = http.get(uri);
 
     future.then( (response) {
-      if (response.statusCode == 200) {
+
+       if (response.statusCode == 200) {
         print('Página carregada');
 
         response = json.decode(response.body);
         
       } else {
         print('Erro');
-      }
+      } 
+      
     });
 
     return [];
