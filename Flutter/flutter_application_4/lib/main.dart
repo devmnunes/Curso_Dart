@@ -23,29 +23,36 @@ class _MyApp extends State<MyApp> {
     (i) => 'Produto ${i + 1}',
   );
 
-  Future<List<Produto>?> getProdutos() async {
-    Uri uri = Uri.https(
-      'api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
-    );
+  Future<List<Produto>> getProdutos() async {
+    
+    Uri uri = Uri.https('https://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
 
-    final uri = Uri.parse('http://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
+    print(uri);
 
-    final future = http.get(uri);
+    var response = await http.get(uri);
+    var dados = json.decode(response.body);
 
-    future.then( (response) {
+    print(dados);
 
-       if (response.statusCode == 200) {
-        print('Página carregada');
-
-        response = json.decode(response.body);
-        
-      } else {
-        print('Erro');
-      } 
-      
+    dados.forEach( (elemento) {
+      print(elemento);
     });
 
-    print [];
+    /* Produto produto = Produto(
+      elemento['id'],
+      elemento['name'],
+      elemento['address'],
+      elemento['descricao'],
+      elemento['imagem'],
+      int.parse(elemento['quantidade']),
+      double.parse(elemento['preco']),
+    ); */
+      
+
+
+    
+
+    return [];
   }
 
   @override
@@ -82,18 +89,18 @@ class Produtos {
 }
 
 class Produto {
-  final int produtoId;
-  final String produto;
-  final String endereco;
+  final int id;
+  final String name;
+  final String address;
   final String descricao;
   final String imagem;
   final int quantidade;
   final double preco;
 
   Produto(
-    this.produtoId,
-    this.produto,
-    this.endereco,
+    this.id,
+    this.name,
+    this.address,
     this.descricao,
     this.imagem,
     this.quantidade,
@@ -102,9 +109,9 @@ class Produto {
 
   factory Produto.fromJson(Map<String, dynamic> json) {
     return Produto(
-      json['produtoId'],
-      json['produto'],
-      json['endereco'],
+      json['id'],
+      json['name'],
+      json['address'],
       json['descricao'],
       json['imagem'],
       json['quantidade'],
@@ -113,9 +120,9 @@ class Produto {
   }
 
   Map<String, dynamic> toJson() => {
-    'produtoId': this.produtoId,
-    'produto': this.produto,
-    'endereco': this.endereco,
+    'produtoId': this.id,
+    'produto': this.name,
+    'endereco': this.address,
     'descricao': this.descricao,
     'imagem': this.imagem,
     'quantidade': this.quantidade,
