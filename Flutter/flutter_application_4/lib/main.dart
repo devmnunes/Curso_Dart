@@ -28,7 +28,7 @@ class _MyApp extends State<MyApp> {
       'api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud',
     );
 
-    Uri uri = Uri.parse('http://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
+    final uri = Uri.parse('http://api.json-generator.com/templates/72wvYFb9kfuM/data?access_token=fqac8t7tjfg2bf747xt8bteees07k789xr27zzud');
 
     final future = http.get(uri);
 
@@ -45,7 +45,7 @@ class _MyApp extends State<MyApp> {
       
     });
 
-    print(produtos);
+    print [];
   }
 
   @override
